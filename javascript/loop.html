@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="output"></p>
+    <script>
+        const arr=['car1', "car2", "car3"];
+        const len=arr.length;
+        let text=" ";
+        for(let i=0;i<len;i++){
+            if(i==1){
+                continue;
+            }
+            text+=arr[i]+"<br>"; 
+        }
+        document.getElementById("output").innerHTML = text;
+    </script>
+    
+</body>
+</html>
