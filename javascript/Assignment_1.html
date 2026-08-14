@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="shop">
+
+        <h1 style="text-align:center;">Online-Shop</h1>
+
+        <div id="content">
+            <h3>Tea: $50</h3>
+            <h3>Coffee: $450</h3>
+            <h3>Rice: $250</h3>
+            <h3>Sugar: $500</h3>
+            <h3>Shake: $350</h3>
+        </div>
+
+        <br>
+
+        <label>Product</label>
+        <input type="text" id="product">
+
+        <br><br>
+
+        <label>Quantity</label>
+        <input type="number" id="Quantity" min="1">
+
+        <br><br>
+
+        <button id="calculate">Calculate</button>
+
+        <h2 id="total"></h2>
+
+    </div>
+
+    <script>
+        
+    const products = {
+    tea: 50,
+    coffee: 450,
+    rice: 250,
+    sugar: 500,
+    shake: 350
+    };
+
+    document.getElementById("calculate").addEventListener("click", function () {
+
+    let product = document.getElementById("product").value.toLowerCase();
+
+    let quantity = Number(document.getElementById("Quantity").value);
+
+    let price = products[product];
+
+    let total = price * quantity;
+
+    document.getElementById("total").innerHTML ="Total Amount: $" + total;
+    
+    });
+   </script>
+
+</body>
+</html>
