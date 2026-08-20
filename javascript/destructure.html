@@ -23,11 +23,16 @@
 
       // array destructutring
 
-      const arr = [1, 9, 5, 19, 22];
-      const [a, i, e, o, u] = arr;
+      const arr1 = [1, 9, 5, 19, 22];
+      const [a, i, e, o, u] = arr1;
 
       document.write(a);
-      document.write(e);
+      document.write(e + "<br>");
+
+      //spread operator
+      const arr2 = [110, 220, 330];
+      const res = [...arr1, ...arr2];
+      document.writeln(res);
     </script>
   </body>
 </html>
