@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const student = {
+        name: "samrat",
+        branch: "BCA",
+        Fee: 166000,
+      };
+      //document.write(student.name);
+      //document.write(student.branch);
+      //document.write(student.Fee + "<br>");
+
+      const { name, branch, Fee } = student;
+      document.writeln(name);
+      document.writeln(branch);
+      document.writeln(Fee);
+
+      // array destructutring
+
+      const arr = [1, 9, 5, 19, 22];
+      const [a, i, e, o, u] = arr;
+
+      document.write(a);
+      document.write(e);
+    </script>
+  </body>
+</html>
