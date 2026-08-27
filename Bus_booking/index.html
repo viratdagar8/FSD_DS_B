@@ -22,7 +22,7 @@
         <h2>Bus Booking System</h2>
       </center>
       <h3>User Informations</h3>
-      <p>Name:<input type="text" /></p>
+      <p>Name:<input type="text"id="name" /></p>
       <br />
       <p id="city">
         Address:<input type="text" />
@@ -35,17 +35,17 @@
         </select>
       </p>
       <br />
-      <p>Mobile no.:<input type="tel" /></p>
+      <p>Mobile no.:<input type="tel" id="mobile" /></p>
       <br />
-      <p>Adhaar no.:<input type="text" /></p>
+      <p>Adhaar no.:<input type="text" id="aadhaar" /></p>
       <br />
       <div>
      <label><h3>Bus options:</h3></label> 
     
-       <input type="radio" id="Ac" name="bus options" value="Ac">
+       <input type="radio" id="Ac" name="bus)ption" value="Ac">
        <label for="Ac">AC</label>
     
-        <input type="radio" id="Non-Ac" name="bus options" value="Non-Ac">
+        <input type="radio" id="Non-Ac" name="busOption" value="Non-Ac">
         <label for="Non-Ac">Non-AC</label>
       </p>
       <p>
@@ -59,14 +59,56 @@
           <option value="">5</option>
         </select>
       </p>
-      <button>Save </button>
+      <button onclick="Saveticket()">Save </button>
+      <div id="result"></div>
     </div>
     </div>
 
     <script>
           function Saveticket(){
+            const name=document.getElementById("name").value;
+            const address=document.getElementById("address").value;
+            const city=document.getElementById("city").value;
+            const mobile=document.getElementById("mobile").value;
+            const aadhaar=document.getElementById("aadhaar").value;
+            const seats=document.getElementById("seats").value;
 
-          }
+            const busOption=document.querySelector('input[name="busOption"]:checked');
+
+            if(
+              name === ""||
+              address === ""||
+              city === ""||
+              mobile === ""||
+              aadhaar === ""||
+              seats === ""||
+              !busoption
+            ){
+              alert("Please fill all the detials");
+              return;
+            }
+
+            document.getElementById("result").innerHTML = `
+        Booking Successful! <br><br>
+
+        Name: ${name} <br>
+        Address: ${address} <br>
+        City: ${city} <br>
+        Mobile: ${mobile} <br>
+        Aadhaar: ${aadhaar} <br>
+        Bus Type: ${busOption.value} <br>
+        Seats: ${seats}
+    `;
+        console.log({
+        name,
+        address,
+        city,
+        mobile,
+        aadhaar,
+        busType: busOption.value,
+        seats
+    });
+ }
 
     </script>
   </body>
