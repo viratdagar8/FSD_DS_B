@@ -15,7 +15,15 @@ function f2() {
     })
 
 }
-f1().then(f2)
-     .catch((err) => {
+// f1().then(f2)
+//      .catch((err) => {
+//         console.log("error",err);
+//      })
+async function test() {
+    try {
+        await f1();
+        await f2();
+    } catch (err) {
         console.log("error",err);
-     })
+    }           
+}
